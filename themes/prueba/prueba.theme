@@ -1,0 +1,26 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the Seven theme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\node\Entity\Node;
+
+function prueba_preprocess_node(&$vars) {
+  // Get the node ID.
+  $nid = $vars['node']->id();
+//var_dump($vars);
+  // Get the author ID.
+  $uid = $vars['node']->getOwnerId();
+}
+
+
+
+function prueba_preprocess_html(&$vars) {
+  $node = \Drupal::request()->attributes->get('node');
+  $nid = $node->id();
+}
+
